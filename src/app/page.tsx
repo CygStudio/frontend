@@ -1,101 +1,72 @@
-import Image from "next/image";
+// import InfiniteMarquee from "@/components/infinite-marquee"
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  // 更新示例資料陣列中的 username 格式
+  const items = [
+    {
+      id: 1,
+      avatar: "/avatars/daku.png",
+      username: "@Euryka",
+      content:
+        "祝歌生日快樂~ お誕生日おめでとう！真的很高興能跟你伴歌~祝誕第二個生日真的歌後的每一天都很幸福，開朗歌，往後的日子也請多多指教。 ヽ(´▽`)/也希望歌能在未來的一年也能繼續每天開心直書、暢企劃、做自己想做的事~ 加油！！[J・ω・]J 開歌 [ノ・ω・]ノ 跳可愛！",
+      decoration: "/decorations/gold-bell.png",
+    },
+    {
+      id: 2,
+      avatar: "/avatars/daku.png",
+      username: "@Euryka",
+      content: "恭喜新婚！願你們的未來充滿幸福與歡樂，攜手共度每一個美好時刻。祝福你們永遠相愛，白頭偕老！",
+      decoration: "/decorations/gold-bell.png",
+    },
+    {
+      id: 3,
+      avatar: "/avatars/daku.png",
+      username: "@Euryka",
+      content: "感謝你一直以來的支持與鼓勵！你的友誼對我來說非常寶貴，希望我們的友誼能夠長長久久！",
+      decoration: "/decorations/gold-bell.png",
+    },
+    {
+      id: 4,
+      avatar: "/avatars/daku.png",
+      username: "@Euryka",
+      content: "新年快樂！願新的一年裡，你能夠實現所有的夢想，生活充滿歡笑與幸福！",
+      decoration: "/decorations/gold-bell.png",
+    },
+    {
+      id: 5,
+      avatar: "/avatars/daku.png",
+      username: "@Euryka",
+      content: "恭喜畢業！你的努力終於得到了回報，未來的道路一定會更加精彩！",
+      decoration: "/decorations/gold-bell.png",
+    },
+    {
+      id: 6,
+      avatar: "/avatars/daku.png",
+      username: "@Euryka",
+      content: "生日快樂！願你在新的一歲裡，健康快樂，心想事成！",
+      decoration: "/decorations/gold-bell.png",
+    },
+  ]
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <main className="min-h-screen bg-green-700 relative overflow-hidden">
+      {/* 左側標題區域 */}
+      <div className="absolute top-20 left-10 z-10 lg:block">
+        <h1 className="text-4xl font-bold text-white">婚叫們的祝福</h1>
+      </div>
+
+      {/* 大圖區域 - 桌面版在左側，平板版在上方 */}
+      <div className="hidden md:block lg:absolute lg:left-0 lg:top-0 lg:bottom-0 lg:w-1/3 md:w-full md:h-1/3">
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="bg-green-800/30 rounded-lg p-8 m-4 w-4/5 h-4/5 flex items-center justify-center">
+            <span className="text-white text-xl">大圖區域</span>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </div>
+
+      {/* 跑馬燈區域 */}
+      {/* <InfiniteMarquee items={items} /> */}
+    </main>
+  )
 }
+
